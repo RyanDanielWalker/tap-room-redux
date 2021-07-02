@@ -95,7 +95,6 @@ class KegControl extends React.Component {
     this.setState({ selectedKeg: currentKeg })
   }
 
-
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;

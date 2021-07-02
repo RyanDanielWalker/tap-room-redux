@@ -16,11 +16,11 @@ function ReusableForm(props) {
           name='brand'
           placeholder='Brand' />
         <input
-          type='text'
+          type='number'
           name='price'
           placeholder='Price' />
         <input
-          type='text'
+          type='number'
           name='abv'
           placeholder='Alcohol By Volume' />
         <Button variant="outline-secondary" type='submit'>{props.buttonText}</Button>

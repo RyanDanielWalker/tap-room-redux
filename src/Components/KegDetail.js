@@ -10,14 +10,15 @@ function KegDetail(props) {
       <h3>{keg.name}</h3>
       <h5>{keg.brand}</h5>
       <hr width="65%" />
-      <h6>{keg.price} :: {keg.abv}</h6>
+      <h6>Price : {keg.price}</h6>
+      <h6>A.B.V. : {keg.abv}</h6>
       <h6>{keg.pintsRemaining} pints remaining in keg.</h6>
       <Button variant="outline-secondary" onClick={onClickingSellPint}>Sell Pint</Button>
     </React.Fragment>
   )
 }
 
-KegDetails.propTypes = {
+KegDetail.propTypes = {
   keg: PropTypes.object,
   onClickingSellPint: PropTypes.func
 }

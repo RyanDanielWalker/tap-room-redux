@@ -26,7 +26,7 @@ class KegControl extends React.Component {
           brand: "Pabst",
           price: 3.00,
           abv: 4.2,
-          pintsRemaining: 124,
+          pintsRemaining: 15,
           id: v4()
         }
       ],

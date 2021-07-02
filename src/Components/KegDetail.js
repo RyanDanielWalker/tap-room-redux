@@ -11,9 +11,17 @@ function KegDetail(props) {
       <h5>{keg.brand}</h5>
       <hr width="65%" />
       <h6>Price : ${keg.price}</h6>
-      <h6>A.B.V. : {keg.abv}</h6>
+      <h6>A.B.V. : {keg.abv}%</h6>
       <h6>{keg.pintsRemaining} pints remaining in keg.</h6>
-      <Button variant="outline-success" onClick={() => onClickingSellPint(keg.id)} >Sell Pint</Button>
+      {keg.pintsRemaining <= 10 && keg.pintsRemaining > 0 &&
+        <h6>Almost Empty!</h6>
+      }
+      {keg.pintsRemaining > 0 &&
+        <Button variant="outline-success" onClick={() => onClickingSellPint(keg.id)} >Sell Pint</Button>
+      }
+      {keg.pintsRemaining === 0 &&
+        <h6>This Beer is Sold Out!</h6>
+      }
       <Button variant="outline-danger" onClick={() => onClickingDelete(keg.id)} >Delete Keg</Button>
       <Button variant="outline-secondary" onClick={onClickingEdit} >Edit Keg</Button>
     </React.Fragment>

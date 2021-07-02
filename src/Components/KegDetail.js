@@ -7,12 +7,14 @@ function KegDetail(props) {
 
   return (
     <React.Fragment>
-      <h3>{keg.name}</h3>
-      <h5>{keg.brand}</h5>
-      <hr width="65%" />
-      <h6>Price : {keg.price}</h6>
-      <h6>A.B.V. : {keg.abv}</h6>
-      <h6>{keg.pintsRemaining} pints remaining in keg.</h6>
+      <div>
+        <h3>{keg.name}</h3>
+        <h5>{keg.brand}</h5>
+        <hr width="65%" />
+        <h6>Price : {keg.price}</h6>
+        <h6>A.B.V. : {keg.abv}</h6>
+        <h6>{keg.pintsRemaining} pints remaining in keg.</h6>
+      </div>
       <Button variant="outline-secondary" onClick={() => onClickingSellPint(keg.id)}>Sell Pint</Button>
     </React.Fragment>
   )

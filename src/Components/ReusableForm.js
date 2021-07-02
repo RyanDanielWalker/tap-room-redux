@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button'
 
 
 function ReusableForm(props) {
@@ -22,7 +23,7 @@ function ReusableForm(props) {
           type='text'
           name='abv'
           placeholder='Alcohol By Volume' />
-        <button type='submit'>{props.buttonText}</button>
+        <Button variant="outline-secondary" type='submit'>{props.buttonText}</Button>
       </form>
     </React.Fragment>
   );

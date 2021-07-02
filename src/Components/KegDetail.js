@@ -20,7 +20,7 @@ function KegDetail(props) {
         <Button variant="outline-success" onClick={() => onClickingSellPint(keg.id)} >Sell Pint</Button>
       }
       {keg.pintsRemaining === 0 &&
-        <h6>This Beer is Sold Out!</h6>
+        <h6>This Keg is Sold Out!</h6>
       }
       <Button variant="outline-danger" onClick={() => onClickingDelete(keg.id)} >Delete Keg</Button>
       <Button variant="outline-secondary" onClick={onClickingEdit} >Edit Keg</Button>

@@ -11,14 +11,16 @@ export const cardStyles = {
   padding: '10px',
   textAlign: 'center',
   margin: 'auto',
-  width: '50vw'
+  width: '50vw',
+  boxShadow: '5px 5px 5px #AF9E0C'
 }
 
 export const buttonStyles = {
   margin: 'auto',
   width: '25%',
   marginBottom: '10px',
-  display: 'block'
+  display: 'block',
+  boxShadow: '2px 2px 2px'
 }
 
 export const formStyles = {
@@ -121,23 +123,39 @@ class KegControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
-      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKegInList} />
+      currentlyVisibleState =
+        <EditKegForm
+          keg={this.state.selectedKeg}
+          onEditKeg={this.handleEditingKegInList} />
       buttonText = "Return to Keg List";
     } else if (this.state.selectedKeg !== null) {
-      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingSellPint={this.handleSellPint} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
+      currentlyVisibleState =
+        <KegDetail
+          keg={this.state.selectedKeg}
+          onClickingSellPint={this.handleSellPint}
+          onClickingDelete={this.handleDeletingKeg}
+          onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Keg List";
     } else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddNewKeg} />
+      currentlyVisibleState =
+        <NewKegForm
+          onNewKegCreation={this.handleAddNewKeg} />
       buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
+      currentlyVisibleState =
+        <KegList
+          kegList={this.state.masterKegList}
+          onKegSelection={this.handleChangingSelectedKeg} />
       buttonText = "Add New Keg";
     }
     return (
       <React.Fragment>
         <Card style={cardStyles}>
           {currentlyVisibleState}
-          <Button style={buttonStyles} variant="outline-primary" onClick={this.handleClick}>{buttonText}</Button>
+          <Button
+            style={buttonStyles}
+            variant="outline-primary"
+            onClick={this.handleClick}>{buttonText}</Button>
         </Card>
       </React.Fragment>
     )

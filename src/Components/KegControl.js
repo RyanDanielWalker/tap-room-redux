@@ -21,6 +21,13 @@ export const buttonStyles = {
   display: 'block'
 }
 
+export const formStyles = {
+  textAlign: 'center',
+  margin: 'auto',
+  width: '65%',
+  marginBottom: '10px',
+}
+
 class KegControl extends React.Component {
 
   constructor(props) {

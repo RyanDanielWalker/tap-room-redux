@@ -3,6 +3,8 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { buttonStyles } from './KegControl';
+import Form from 'react-bootstrap/Form';
+import { formStyles } from './KegControl';
 
 function NewKegForm(props) {
 
@@ -20,29 +22,38 @@ function NewKegForm(props) {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleNewKegFormSubmission}>
-        <h6>Name:</h6>
-        <input
-          type='text'
-          name='name'
-          placeholder='Name' />
-        <h6>Brand:</h6>
-        <input
-          type='text'
-          name='brand'
-          placeholder='Brand' />
-        <h6>Price:</h6>
-        <input
-          type='text'
-          name='price'
-          placeholder='Price' />
-        <h6>Alcohol By Volume:</h6>
-        <input
-          type='text'
-          name='abv'
-          placeholder='Alcohol By Volume' />
+      <Form onSubmit={handleNewKegFormSubmission}>
+        <Form.Group >
+          <h6>Name:</h6>
+          <Form.Control
+            style={formStyles}
+            type='text'
+            name='name'
+            placeholder='Name'
+            required='required' />
+          <h6>Brand:</h6>
+          <Form.Control
+            style={formStyles}
+            type='text'
+            name='brand'
+            placeholder='Brand'
+            required='required' />
+          <h6>Price:</h6>
+          <Form.Control
+            style={formStyles}
+            type='text'
+            name='price'
+            placeholder='Price'
+            required='required' />
+          <h6>Alcohol By Volume:</h6>
+          <Form.Control
+            style={formStyles}
+            type='text'
+            name='abv'
+            placeholder='Alcohol By Volume' />
+        </Form.Group>
         <Button style={buttonStyles} variant="outline-secondary" type='submit' >Submit</Button>
-      </form>
+      </Form>
     </React.Fragment>
   );
 }

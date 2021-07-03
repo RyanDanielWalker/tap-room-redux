@@ -10,7 +10,7 @@ function Keg(props) {
         {props.pintsRemaining === 0 &&
           <h5>This Keg is Sold Out!</h5>
         }
-        <hr />
+        <hr width="65%" />
       </div>
     </React.Fragment>
   )

@@ -22,8 +22,8 @@ function KegDetail(props) {
       {keg.pintsRemaining === 0 &&
         <h6>This Keg is Sold Out!</h6>
       }
-      <Button variant="outline-danger" onClick={() => onClickingDelete(keg.id)} >Delete Keg</Button>
       <Button variant="outline-secondary" onClick={onClickingEdit} >Edit Keg</Button>
+      <Button variant="outline-danger" onClick={() => onClickingDelete(keg.id)} >Delete Keg</Button>
     </React.Fragment>
   )
 }

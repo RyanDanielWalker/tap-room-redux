@@ -4,7 +4,22 @@ import KegList from './KegList';
 import NewKegForm from './NewKegForm';
 import EditKegForm from './EditKegForm';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { v4 } from 'uuid'
+
+export const cardStyles = {
+  padding: '10px',
+  textAlign: 'center',
+  margin: 'auto',
+  width: '50vw'
+}
+
+export const buttonStyles = {
+  margin: 'auto',
+  width: '25%',
+  marginBottom: '10px',
+  display: 'block'
+}
 
 class KegControl extends React.Component {
 
@@ -16,17 +31,17 @@ class KegControl extends React.Component {
         {
           name: "PBR",
           brand: "Pabst",
-          price: 3.00,
-          abv: 4.2,
-          pintsRemaining: 124,
+          price: "3.00",
+          abv: "4.2",
+          pintsRemaining: "124",
           id: v4()
         },
         {
           name: "Rainier",
           brand: "Pabst",
-          price: 3.00,
-          abv: 4.2,
-          pintsRemaining: 15,
+          price: "3.00",
+          abv: "4.2",
+          pintsRemaining: "15",
           id: v4()
         }
       ],
@@ -113,8 +128,10 @@ class KegControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
-        <Button variant="outline-primary" onClick={this.handleClick}>{buttonText}</Button>
+        <Card style={cardStyles}>
+          {currentlyVisibleState}
+          <Button style={buttonStyles} variant="outline-primary" onClick={this.handleClick}>{buttonText}</Button>
+        </Card>
       </React.Fragment>
     )
   }

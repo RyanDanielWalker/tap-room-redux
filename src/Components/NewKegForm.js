@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
+import { buttonStyles } from './KegControl';
 
 function NewKegForm(props) {
 
@@ -40,7 +41,7 @@ function NewKegForm(props) {
           type='text'
           name='abv'
           placeholder='Alcohol By Volume' />
-        <Button variant="outline-secondary" type='submit' >Submit</Button>
+        <Button style={buttonStyles} variant="outline-secondary" type='submit' >Submit</Button>
       </form>
     </React.Fragment>
   );

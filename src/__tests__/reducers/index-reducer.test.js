@@ -3,6 +3,8 @@ import kegListReducer from './../../reducers/keg-list-reducer';
 import formVisibleReducer from './../../reducers/form-visible-reducer';
 import { createStore } from 'redux';
 import * as c from './../../actions/ActionTypes';
+import selectedKegReducer from '../../reducers/selected-keg-reducer';
+import { makeSelectedKeg } from '../../actions';
 
 let store = createStore(rootReducer);
 
@@ -10,7 +12,8 @@ describe('rootReducer', () => {
   test('Should return default state if no action type is recognized', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      selectedKeg: {}
     });
   });
 
@@ -42,6 +45,14 @@ describe('rootReducer', () => {
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
+  test('Check that MAKE_SELECTED_KEG action works for selectedKegReducer and rootReducer', () => {
+    const action = {
+      type: c.MAKE_SELECTED_KEG
+    }
+    store.dispatch(action);
+    expect(store.getState().selectedKeg).toEqual(selectedKegReducer({}, action));
   });
 
 })

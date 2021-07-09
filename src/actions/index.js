@@ -21,3 +21,18 @@ export const deleteKeg = (id) => ({
   type: c.DELETE_KEG,
   id
 });
+
+export const makeSelectedKeg = (keg) => {
+  const { name, brand, price, abv, pintsRemaining, id } = keg;
+  return {
+    type: c.MAKE_SELECTED_KEG,
+    name: name,
+    brand: brand,
+    price: price,
+    abv: abv,
+    pintsRemaining: pintsRemaining,
+    id: id
+  }
+}
+
+

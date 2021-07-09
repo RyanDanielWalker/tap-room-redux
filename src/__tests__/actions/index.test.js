@@ -26,5 +26,18 @@ describe('tap room actions', () => {
       id: 1
     });
   });
+
+  test('makeSelectedKeg should create MAKE_SELECTED_KEG action', () => {
+    expect(a.makeSelectedKeg({ name: 'Rainier', brand: 'Pabst', price: '3', abv: '4.2', pintsRemaining: '124', id: 1 })).toEqual({
+      type: c.MAKE_SELECTED_KEG,
+      name: 'Rainier',
+      brand: 'Pabst',
+      price: '3',
+      abv: '4.2',
+      pintsRemaining: '124',
+      id: 1
+    });
+  });
 });
+
 

@@ -47,9 +47,16 @@ export const isEditing = () => {
   }
 }
 
-export const sellPint = () => {
+export const sellPint = (keg) => {
+  let { name, brand, price, abv, pintsRemaining, id } = keg;
   return {
-    type: c.SELL_PINT
+    type: c.SELL_PINT,
+    name: name,
+    brand: brand,
+    price: price,
+    abv: abv,
+    pintsRemaining: pintsRemaining -= 1,
+    id: id
   };
 };
 

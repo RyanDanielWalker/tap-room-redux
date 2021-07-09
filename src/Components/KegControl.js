@@ -140,11 +140,14 @@ class KegControl extends React.Component {
 
   handleSellPint = (id) => {
     const currentKeg = this.props.masterKegList[id];
-    const newPintsRemaining = currentKeg.pintsRemaining - 1;
-    currentKeg.pintsRemaining = newPintsRemaining;
     const { dispatch } = this.props;
-    const action = a.makeSelectedKeg(currentKeg);
-    dispatch(action)
+    // const newPintsRemaining = currentKeg.pintsRemaining - 1;
+    // currentKeg.pintsRemaining = newPintsRemaining;
+    // const action = a.makeSelectedKeg(currentKeg);
+    // dispatch(action)
+    const action2 = a.sellPint(currentKeg)
+    dispatch(action2)
+    // const action = a.sellPint(id)
     // const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     // const newPintsRemaining = currentKeg.pintsRemaining - 1;
     // currentKeg.pintsRemaining = newPintsRemaining;

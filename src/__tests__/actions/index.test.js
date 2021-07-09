@@ -50,6 +50,12 @@ describe('tap room actions', () => {
       type: c.IS_EDITING
     });
   });
+
+  test('sellPint should create SELL_PINT action', () => {
+    expect(a.sellPint()).toEqual({
+      type: c.SELL_PINT
+    })
+  });
 });
 
 

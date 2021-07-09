@@ -19,8 +19,8 @@ export default (state = {}, action) => {
       delete newState[id];
       return newState;
     case c.SELL_PINT:
-      const newPintRemainingState = { ...state };
-      newPintRemainingState.pintsRemaining -= 1;
+      let newPintRemainingState = { ...state };
+      // newPintRemainingState.pintsRemaining -= 1;
       return newPintRemainingState
     default:
       return state

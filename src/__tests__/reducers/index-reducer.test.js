@@ -71,6 +71,5 @@ describe('rootReducer', () => {
     }
     store.dispatch(action);
     expect(store.getState().editing).toEqual(editingReducer(false, action))
-  })
-
+  });
 })

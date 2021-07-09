@@ -13,7 +13,11 @@ export default (state = {}, action) => {
           pintsRemaining: pintsRemaining,
           id: id
         }
-      })
+      });
+    case c.DELETE_KEG:
+      const newState = { ...state };
+      delete newState[id];
+      return newState;
   }
   return state
 }

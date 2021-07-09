@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import * as c from './../../actions/ActionTypes';
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
 import { makeSelectedKeg } from '../../actions';
+import editingReducer from '../../reducers/editing-reducer';
 
 let store = createStore(rootReducer);
 
@@ -13,7 +14,8 @@ describe('rootReducer', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
       formVisibleOnPage: false,
-      selectedKeg: {}
+      selectedKeg: {},
+      editing: false
     });
   });
 
@@ -61,6 +63,14 @@ describe('rootReducer', () => {
     }
     store.dispatch(action);
     expect(store.getState().selectedKeg).toEqual(selectedKegReducer({}, action))
+  })
+
+  test('Check that IS_EDITING action works for editingReducer and rootReducer', () => {
+    const action = {
+      type: c.IS_EDITING
+    }
+    store.dispatch(action);
+    expect(store.getState().editing).toEqual(editingReducer(false, action))
   })
 
 })

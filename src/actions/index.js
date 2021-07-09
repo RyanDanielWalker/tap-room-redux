@@ -41,4 +41,12 @@ export const nullSelectedKeg = () => {
   }
 }
 
+export const isEditing = () => {
+  return {
+    type: c.IS_EDITING
+  }
+}
+
+
+
 

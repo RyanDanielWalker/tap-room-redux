@@ -44,6 +44,12 @@ describe('tap room actions', () => {
       type: c.NULL_SELECTED_KEG
     })
   })
+
+  test('isEditing should create IS_EDITING action', () => {
+    expect(a.isEditing()).toEqual({
+      type: c.IS_EDITING
+    });
+  });
 });
 
 

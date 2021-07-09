@@ -21,4 +21,27 @@ describe('rootReducer', () => {
   test('Check that the initial state of formVisibleReducer matches rootReducer', () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   })
+
+  test('Check that ADD_KEG action works for kegListReducer and rootReducer', () => {
+    const action = {
+      type: c.ADD_KEG,
+      name: 'Rainier',
+      brand: 'Pabst',
+      price: '3',
+      abv: '4.2',
+      pintsRemaining: '124',
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
+  });
+
+  test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: c.TOGGLE_FORM
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
 })

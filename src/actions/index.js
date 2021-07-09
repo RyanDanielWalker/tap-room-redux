@@ -35,4 +35,10 @@ export const makeSelectedKeg = (keg) => {
   }
 }
 
+export const nullSelectedKeg = () => {
+  return {
+    type: c.NULL_SELECTED_KEG
+  }
+}
+
 

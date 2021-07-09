@@ -38,6 +38,12 @@ describe('tap room actions', () => {
       id: 1
     });
   });
+
+  test('nullSelectedKeg should create NULL_SELECTED_KEG action', () => {
+    expect(a.nullSelectedKeg()).toEqual({
+      type: c.NULL_SELECTED_KEG
+    })
+  })
 });
 
 

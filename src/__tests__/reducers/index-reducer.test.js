@@ -55,4 +55,12 @@ describe('rootReducer', () => {
     expect(store.getState().selectedKeg).toEqual(selectedKegReducer({}, action));
   });
 
+  test('Check that NULL_SELECTED_KEG action works for selectedKegReducer and rootReducer', () => {
+    const action = {
+      type: c.NULL_SELECTED_KEG
+    }
+    store.dispatch(action);
+    expect(store.getState().selectedKeg).toEqual(selectedKegReducer({}, action))
+  })
+
 })

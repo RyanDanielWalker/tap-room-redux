@@ -71,6 +71,45 @@ describe('kegListReducer', () => {
         pintsRemaining: '124',
         id: 2
       }
-    })
-  })
+    });
+  });
+
+  test('Should update keg data in masterKegList', () => {
+    const { name, brand, price, abv, pintsRemaining, id } = kegData;
+
+    action = {
+      type: c.ADD_KEG,
+      name: name,
+      brand: brand,
+      price: price,
+      abv: abv,
+      pintsRemaining: pintsRemaining,
+      id: id
+    };
+
+    const newState = kegListReducer({}, action);
+
+    action = {
+      type: c.ADD_KEG,
+      name: "Doug's Ale",
+      brand: "Steve's Brewery",
+      price: '14',
+      abv: '45',
+      pintsRemaining: '12',
+      id: 1
+    };
+
+    const newState2 = kegListReducer(newState, action);
+
+    expect(newState2).toEqual({
+      [id]: {
+        name: "Doug's Ale",
+        brand: "Steve's Brewery",
+        price: '14',
+        abv: '45',
+        pintsRemaining: '12',
+        id: 1
+      }
+    });
+  });
 })

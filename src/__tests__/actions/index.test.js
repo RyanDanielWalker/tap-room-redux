@@ -1,5 +1,5 @@
-import * as a from './../../actions';
-import * as c from './../../actions/ActionTypes';
+import * as a from '../../actions';
+import * as c from '../../actions/ActionTypes';
 
 describe('tap room actions', () => {
   test('addKeg should create ADD_TICKET action', () => {

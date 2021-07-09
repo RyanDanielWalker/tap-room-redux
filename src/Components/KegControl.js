@@ -6,6 +6,8 @@ import EditKegForm from './EditKegForm';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { v4 } from 'uuid'
+import PropTypes from 'prop-types';
+import * as a from './../actions';
 
 export const cardStyles = {
   padding: '10px',
@@ -35,7 +37,7 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+      // formVisibleOnPage: false,
       // masterKegList: [
       //   {
       //     name: "PBR",
@@ -62,16 +64,19 @@ class KegControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formVisibleOnPage: false,
+        // formVisibleOnPage: false,
         selectedKeg: null,
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
-    }
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage
+    };
   }
+
 
   handleAddNewKeg = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
@@ -162,4 +167,17 @@ class KegControl extends React.Component {
   }
 }
 
+KegControl.propTypes = {
+  masterKegList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
+};
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state.masterKegList,
+    formVisibleOnPage: state.formVisibleOnPage
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 export default KegControl;

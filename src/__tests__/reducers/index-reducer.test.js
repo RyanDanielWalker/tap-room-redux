@@ -14,7 +14,7 @@ describe('rootReducer', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
       formVisibleOnPage: false,
-      selectedKeg: {},
+      selectedKeg: null,
       editing: false
     });
   });

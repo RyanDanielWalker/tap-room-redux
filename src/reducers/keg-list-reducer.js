@@ -18,6 +18,7 @@ export default (state = {}, action) => {
       const newState = { ...state };
       delete newState[id];
       return newState;
+    default:
+      return state
   }
-  return state
 }

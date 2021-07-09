@@ -34,7 +34,7 @@ describe('selectedKegReducer', () => {
     action = {
       type: c.NULL_SELECTED_KEG
     }
-    expect(selectedKegReducer({}, action)).toEqual({});
+    expect(selectedKegReducer({}, action)).toEqual(null);
   });
 })
 

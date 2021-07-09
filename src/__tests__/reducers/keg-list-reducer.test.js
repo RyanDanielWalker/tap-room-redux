@@ -112,4 +112,19 @@ describe('kegListReducer', () => {
       }
     });
   });
-})
+
+  test('Should update pintsRemaining property to equal one less than the previous state', () => {
+    action = {
+      type: c.SELL_PINT
+    }
+    const newPintState = kegListReducer(kegData, action)
+    expect(newPintState).toEqual({
+      name: 'Rainier',
+      brand: 'Pabst',
+      price: '3',
+      abv: '4.2',
+      pintsRemaining: 123,
+      id: 1
+    });
+  });
+});

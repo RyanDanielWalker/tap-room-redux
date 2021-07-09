@@ -103,32 +103,52 @@ class KegControl extends React.Component {
   }
 
   handleEditingKegInList = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
-    this.setState({
-      masterKegList: editedMasterKegList,
-      editing: false,
-      selectedKeg: null
-    });
+    const { dispatch } = this.props;
+    const action1 = a.addKeg(kegToEdit);
+    dispatch(action1);
+    const action2 = a.isEditing();
+    dispatch(action2);
+    const action3 = a.nullSelectedKeg();
+    dispatch(action3);
+    // const editedMasterKegList = this.state.masterKegList
+    //   .filter(keg => keg.id !== this.state.selectedKeg.id)
+    //   .concat(kegToEdit);
+    // this.setState({
+    //   masterKegList: editedMasterKegList,
+    //   editing: false,
+    //   selectedKeg: null
+    // });
   }
 
   handleEditClick = () => {
-    this.setState({
-      editing: true
-    });
+    const { dispatch } = this.props;
+    const action = a.isEditing();
+    dispatch(action);
+    // this.setState({
+    //   editing: true
+    // });
   }
 
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-    this.setState({ selectedKeg: selectedKeg });
+    const selectedKeg = this.props.masterKegList[id];
+    const { dispatch } = this.props;
+    const action = a.makeSelectedKeg(selectedKeg)
+    dispatch(action)
+    // const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+    // this.setState({ selectedKeg: selectedKeg });
   }
 
   handleSellPint = (id) => {
-    const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+    const currentKeg = this.props.masterKegList[id];
     const newPintsRemaining = currentKeg.pintsRemaining - 1;
     currentKeg.pintsRemaining = newPintsRemaining;
-    this.setState({ selectedKeg: currentKeg })
+    const { dispatch } = this.props;
+    const action = a.makeSelectedKeg(currentKeg);
+    dispatch(action)
+    // const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+    // const newPintsRemaining = currentKeg.pintsRemaining - 1;
+    // currentKeg.pintsRemaining = newPintsRemaining;
+    // this.setState({ selectedKeg: currentKeg })
   }
 
   render() {

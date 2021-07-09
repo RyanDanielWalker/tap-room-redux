@@ -47,6 +47,12 @@ export const isEditing = () => {
   }
 }
 
+export const sellPint = () => {
+  return {
+    type: c.SELL_PINT
+  };
+};
+
 
 
 

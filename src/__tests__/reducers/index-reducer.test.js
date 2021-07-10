@@ -4,7 +4,6 @@ import formVisibleReducer from './../../reducers/form-visible-reducer';
 import { createStore } from 'redux';
 import * as c from './../../actions/ActionTypes';
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
-import { makeSelectedKeg } from '../../actions';
 import editingReducer from '../../reducers/editing-reducer';
 
 let store = createStore(rootReducer);

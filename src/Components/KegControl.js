@@ -5,7 +5,6 @@ import NewKegForm from './NewKegForm';
 import EditKegForm from './EditKegForm';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-// import { v4 } from 'uuid'
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { connect } from 'react-redux';
@@ -35,32 +34,6 @@ export const formStyles = {
 
 class KegControl extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     // masterKegList: [
-  //     //   {
-  //     //     name: "PBR",
-  //     //     brand: "Pabst",
-  //     //     price: "3.00",
-  //     //     abv: "4.2",
-  //     //     pintsRemaining: "124",
-  //     //     id: v4()
-  //     //   },
-  //     //   {
-  //     //     name: "Rainier",
-  //     //     brand: "Pabst",
-  //     //     price: "3.00",
-  //     //     abv: "4.2",
-  //     //     pintsRemaining: "15",
-  //     //     id: v4()
-  //     //   }
-  //     // ],
-  //     // selectedKeg: null,
-  //     // editing: false
-  //   };
-  // }
-
   handleClick = () => {
     if (this.props.selectedKeg != null && this.props.editing === true) {
       const { dispatch } = this.props;
@@ -80,7 +53,6 @@ class KegControl extends React.Component {
     };
   }
 
-
   handleAddNewKeg = (newKeg) => {
     const { dispatch } = this.props;
     const action = a.addKeg(newKeg);
@@ -89,14 +61,13 @@ class KegControl extends React.Component {
     dispatch(action2);
   };
 
-
   handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
     const action = a.deleteKeg(id);
     dispatch(action);
     const action2 = a.nullSelectedKeg();
     dispatch(action2);
-  }
+  };
 
   handleEditingKegInList = (kegToEdit) => {
     const { dispatch } = this.props;

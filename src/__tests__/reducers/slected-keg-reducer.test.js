@@ -29,7 +29,6 @@ describe('selectedKegReducer', () => {
     })
   })
 
-
   test('Should return status of selected ticket to null', () => {
     action = {
       type: c.NULL_SELECTED_KEG

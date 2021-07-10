@@ -6,8 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
+import SeedData from './Components/SeedData';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, SeedData);
 ReactDOM.render(
   <Provider store={store}>
     <App />

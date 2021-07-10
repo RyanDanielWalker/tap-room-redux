@@ -45,19 +45,6 @@ export const isEditing = () => {
   return {
     type: c.IS_EDITING
   }
-}
-
-export const sellPint = (keg) => {
-  let { name, brand, price, abv, pintsRemaining, id } = keg;
-  return {
-    type: c.SELL_PINT,
-    name: name,
-    brand: brand,
-    price: price,
-    abv: abv,
-    pintsRemaining: pintsRemaining -= 1,
-    id: id
-  };
 };
 
 

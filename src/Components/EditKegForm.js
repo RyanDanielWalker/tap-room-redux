@@ -15,7 +15,7 @@ function EditKegForm(props) {
       brand: event.target.brand.value,
       price: event.target.price.value,
       abv: event.target.abv.value,
-      pintsRemaining: event.target.pintsRemaining.value,
+      pintsRemaining: parseInt(event.target.pintsRemaining.value),
       id: keg.id
     });
   }
@@ -55,10 +55,12 @@ function EditKegForm(props) {
           <h6>Pints Remaining in Keg:</h6>
           <Form.Control
             style={formStyles}
-            type='text'
+            type='number'
             name='pintsRemaining'
             placeholder='Pints Remaining in Keg'
-            defaultValue={keg.pintsRemaining} />
+            defaultValue={keg.pintsRemaining}
+            min='0'
+            required='required' />
         </Form.Group>
         <Button style={buttonStyles} variant="outline-secondary" type='submit' >Submit</Button>
       </Form>

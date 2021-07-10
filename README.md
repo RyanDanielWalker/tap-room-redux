@@ -1,6 +1,6 @@
-# _React Tap Room_
+# _React-Redux Tap Room_
 
-#### _A React web application for Creating, Reading, Updating and Deleting kegs of beer_
+#### _A React web application using Redux to handle state for Creating, Reading, Updating and Deleting kegs of beer_
 
 #### By _Ryan Walker_
 
@@ -24,12 +24,12 @@ This application will allow a user to create, view and update details, and delet
 * A command line interface like Terminal or GitBash to run and interact with the app.
 
 ### Installation
-1. Clone the repository: `$ git clone https://github.com/RyanDanielWalker/tap-room`
-2. Navigate to the `/tap-room` directory on your computer
+1. Clone the repository: `$ git clone https://github.com/RyanDanielWalker/tap-room-redux`
+2. Navigate to the `/tap-room-redux` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To run the app:
     * Run the command `npm start` to run the project!
-    * View the application via your preferred web browser by visiting `localhost:5000/`
+    * View the application via your preferred web browser by visiting `localhost:3000/`
 
 ## Known Bugs
 * No bugs identified
@@ -37,6 +37,7 @@ This application will allow a user to create, view and update details, and delet
 ## Technologies Used
 * JavaScript
 * React
+* Redux
 * JSX
 * VS Code
 * NPM
